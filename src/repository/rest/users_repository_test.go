@@ -28,8 +28,8 @@ func TestLoginUserTimeoutFromApi(t *testing.T) {
 	user, err := repository.LoginUser("email@gmail.com", "the-password")
 	assert.Nil(t, user)
 	assert.NotNil(t, err)
-	assert.EqualValues(t, http.StatusInternalServerError, err.Status)
-	assert.EqualValues(t, "invalid restclient response when trying to login user", err.Message)
+	assert.EqualValues(t, http.StatusInternalServerError, err.Status())
+	assert.EqualValues(t, "invalid restclient response when trying to login user", err.Message())
 	//fmt.Printf("%+v\n", user)
 	//fmt.Printf("%+v\n", err)
 
